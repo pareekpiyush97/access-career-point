@@ -262,20 +262,31 @@
   .hero-ctas{ display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 34px; }
 
   .hero-facts{ display: grid; gap: 12px; }
-  .hero-fact{ display: flex; align-items: flex-start; gap: 10px; font-size: 0.92rem; color: var(--chalk-muted); font-family: var(--font-chalk); font-size: 1.1rem; }
+  .hero-fact{ display: flex; align-items: flex-start; gap: 10px; font-size: 0.98rem; color: var(--chalk-muted); font-family: var(--font-body); font-weight: 500; }
   .hero-fact svg{ width: 19px; height: 19px; flex-shrink: 0; color: var(--chalk-yellow); margin-top: 3px; }
   .hero-fact strong{ color: var(--chalk); font-weight: 700; }
   @media (min-width: 640px){ .hero-facts{ grid-template-columns: repeat(3, 1fr); } }
 
   /* ---- Signature: chalk geometry diagram ---- */
+  /* Mobile-first: shown as a faint background watermark, tucked bottom-right
+     so it doesn't compete with the headline/body text sitting above it. */
   .chalk-diagram{
-    position: absolute; right: -40px; top: 30px;
-    width: 380px; height: 380px;
-    opacity: 0.9;
+    position: absolute; right: -40px; bottom: -18px; top: auto;
+    width: 260px; height: 260px;
+    opacity: 0.4;
     z-index: 1;
-    display: none;
+    display: block;
   }
-  @media (min-width: 900px){ .chalk-diagram{ display: block; } }
+  @media (min-width: 900px){
+    .chalk-diagram{
+      right: -40px; top: 30px; bottom: auto;
+      width: 380px; height: 380px;
+      opacity: 0.9;
+    }
+  }
+  @media (max-width: 899px){
+    .chalk-diagram path, .chalk-diagram circle, .chalk-diagram line{ stroke-width: 2.2; }
+  }
   .chalk-diagram path, .chalk-diagram circle, .chalk-diagram line{
     stroke: var(--chalk); fill: none; stroke-width: 1.6; stroke-linecap: round;
     stroke-dasharray: 900; stroke-dashoffset: 900;
@@ -324,7 +335,7 @@
     width: 34px; flex-shrink: 0;
   }
   .agenda-item h3{ font-size: 1.05rem; font-weight: 700; margin-bottom: 6px; }
-  .agenda-item p{ font-size: 0.92rem; color: var(--ink-soft); }
+  .agenda-item p{ font-size: 0.97rem; line-height: 1.6; color: var(--ink-soft); }
 
   /* ============ TIMETABLE (programs) ============ */
   .timetable-wrap{ overflow-x: auto; border-radius: var(--radius); border: 1px solid rgba(245,243,236,0.16); }
@@ -341,7 +352,7 @@
   }
   .timetable tbody td{ color: var(--chalk-muted); border-top: 1px solid rgba(245,243,236,0.1); }
   .timetable tbody th{ border-top: 1px solid rgba(245,243,236,0.1); }
-  .program-note{ margin-top: 24px; font-size: 0.9rem; color: var(--chalk-muted); }
+  .program-note{ margin-top: 24px; font-size: 0.95rem; line-height: 1.6; color: var(--chalk-muted); }
 
   /* ============ CHALK TALK (results) ============ */
   .results-layout{ display: grid; gap: 32px; }
@@ -364,7 +375,7 @@
     background: var(--board-deep); border-radius: var(--radius); padding: 18px 20px;
     border-left: 4px solid var(--chalk-yellow);
   }
-  .slate-card p{ font-family: var(--font-chalk); font-size: 1.25rem; color: var(--chalk); line-height: 1.35; }
+  .slate-card p{ font-family: var(--font-body); font-style: italic; font-weight: 500; font-size: 1.05rem; color: var(--chalk); line-height: 1.55; }
   .slate-caption{ margin-top: 8px; font-size: 0.78rem; color: var(--chalk-muted); font-family: var(--font-body); }
 
   /* ============ NOTICEBOARD (location) ============ */
@@ -412,7 +423,15 @@
     background: radial-gradient(circle at 35% 30%, #a4d3f2, #2c6ea0 70%);
     box-shadow: 0 2px 4px rgba(0,0,0,0.35);
   }
-  .map-pin-frame iframe{ width: 100%; height: 100%; min-height: 320px; border: 0; display: block; }
+  .map-pin-frame iframe{ position: absolute; inset: 0; width: 100%; height: 100%; border: 0; display: block; background: var(--board-deep); }
+  .map-fallback{
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 12px; text-align: center; padding: 24px;
+    background: var(--board-deep); color: var(--chalk);
+  }
+  .map-fallback svg{ width: 34px; height: 34px; color: var(--chalk-yellow); }
+  .map-fallback p{ font-size: 0.92rem; color: var(--chalk-muted); max-width: 28ch; line-height: 1.5; }
 
   /* ============ CONTACT BANNER ============ */
   .bell-banner{
@@ -438,9 +457,108 @@
   footer a:hover{ color: var(--chalk-yellow); }
   .footer-bottom{ border-top: 1px solid rgba(245,243,236,0.12); padding-top: 18px; display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between; }
 
+  /* ============================================================
+     ENGAGEMENT & MOTION — chalk-consistent micro-interactions
+     All keyframe/transition durations are neutralised globally by
+     the prefers-reduced-motion rule declared near the top of file.
+     ============================================================ */
+
+  /* ---- Scroll progress: a chalk line filling in as you read ---- */
+  .scroll-progress{
+    position: fixed; top: 0; left: 0; height: 3px; width: 0%;
+    background: linear-gradient(90deg, var(--chalk-yellow), var(--chalk-coral));
+    z-index: 210;
+    transition: width 0.12s linear;
+  }
+
+  /* ---- Sticky header gains depth once the page has scrolled ---- */
+  .site-header{ transition: box-shadow 0.25s ease; }
+  .site-header.is-scrolled{ box-shadow: 0 8px 20px rgba(0,0,0,0.28); }
+
+  /* ---- Hero: staggered curtain-rise on first paint ---- */
+  .hero-inner > *{
+    animation-name: heroFadeIn;
+    animation-duration: 0.6s;
+    animation-timing-function: ease;
+    animation-fill-mode: both;
+  }
+  .hero-inner > .eyebrow{ animation-delay: 0.05s; }
+  .hero-inner > h1{ animation-delay: 0.18s; }
+  .hero-inner > .hero-sub{ animation-delay: 0.34s; }
+  .hero-inner > .hero-ctas{ animation-delay: 0.5s; }
+  .hero-inner > .hero-facts{ animation-delay: 0.64s; }
+  @keyframes heroFadeIn{ from{ opacity: 0; } }
+
+  /* ---- Hero underline: draws itself like chalk on a board ---- */
+  .hero h1 .underline svg path{
+    stroke-dasharray: 260;
+    stroke-dashoffset: 260;
+    animation-name: chalkDrawUnderline;
+    animation-duration: 0.9s;
+    animation-timing-function: ease;
+    animation-delay: 0.75s;
+    animation-fill-mode: forwards;
+  }
+  @keyframes chalkDrawUnderline{ to{ stroke-dashoffset: 0; } }
+
+  /* ---- Ambient chalk dust drifting in the hero ---- */
+  .chalk-dust-field{ position: absolute; inset: 0; overflow: hidden; z-index: 1; pointer-events: none; }
+  .chalk-dust{
+    position: absolute; border-radius: 50%; background: var(--chalk); opacity: 0;
+    animation-name: chalkDustFloat;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+  }
+  @keyframes chalkDustFloat{
+    0%{ opacity: 0; transform: translate(0,0); }
+    12%{ opacity: 0.45; }
+    88%{ opacity: 0.2; }
+    100%{ opacity: 0; transform: translate(6px,-130px); }
+  }
+
+  /* ---- Staggered reveal for card-grid siblings ---- */
+  .agenda-list .agenda-item:nth-child(1){ transition-delay: 0.02s; }
+  .agenda-list .agenda-item:nth-child(2){ transition-delay: 0.1s; }
+  .agenda-list .agenda-item:nth-child(3){ transition-delay: 0.18s; }
+  .agenda-list .agenda-item:nth-child(4){ transition-delay: 0.26s; }
+  .slate-list .slate-card:nth-child(1){ transition-delay: 0.04s; }
+  .slate-list .slate-card:nth-child(2){ transition-delay: 0.16s; }
+  .slate-list .slate-card:nth-child(3){ transition-delay: 0.28s; }
+
+  /* ---- Card hover lift — mirrors the existing chalk-sketch button tilt ---- */
+  .agenda-item{ transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease; }
+  .agenda-item:hover{ transform: translateY(-5px); box-shadow: 0 14px 26px rgba(46,42,34,0.14); border-color: var(--cork); }
+
+  .slate-card{ transition: transform 0.25s ease, background 0.25s ease; }
+  .slate-card:hover{ transform: translateY(-5px) rotate(-0.3deg); background: rgba(245,243,236,0.045); }
+
+  .rating-slate{ transition: box-shadow 0.25s ease, border-color 0.25s ease; }
+  .rating-slate:hover{ border-color: var(--chalk-yellow); box-shadow: 0 14px 30px rgba(0,0,0,0.22); }
+
+  .pinned-note{ transition: transform 0.25s ease, box-shadow 0.25s ease; }
+  .pinned-note:hover{ transform: rotate(-1deg) translateY(-4px); box-shadow: 0 16px 28px rgba(0,0,0,0.28); }
+
+  .map-pin-frame{ transition: transform 0.25s ease, box-shadow 0.25s ease; }
+  .map-pin-frame:hover{ transform: rotate(1deg) translateY(-4px); box-shadow: 0 16px 28px rgba(0,0,0,0.3); }
+
+  /* ---- Button tactile press ---- */
+  .btn:active{ transform: translateY(0) scale(0.97); }
+
+  /* ---- Rating number counter mount point ---- */
+  .rating-number .value{ display: inline-block; min-width: 2.6ch; }
+
 </style>
 </head>
 <body>
+
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+<noscript>
+  <style>
+    .reveal, #chalkDiagram{ opacity: 1 !important; transform: none !important; }
+    .chalk-diagram path, .chalk-diagram circle, .chalk-diagram line{ stroke-dashoffset: 0 !important; }
+  </style>
+</noscript>
 
 <a class="skip-link" href="#main">Skip to content</a>
 
@@ -461,10 +579,10 @@
 
     <nav class="main-nav" aria-label="Primary">
       <ul>
-        <li><a class="nav-link" href="#why" data-target="why">Today's Board</a></li>
-        <li><a class="nav-link" href="#programs" data-target="programs">Timetable</a></li>
-        <li><a class="nav-link" href="#results" data-target="results">Chalk Talk</a></li>
-        <li><a class="nav-link" href="#location" data-target="location">Noticeboard</a></li>
+        <li><a class="nav-link" href="#why" data-target="why">Why Us</a></li>
+        <li><a class="nav-link" href="#programs" data-target="programs">Programs</a></li>
+        <li><a class="nav-link" href="#results" data-target="results">Reviews</a></li>
+        <li><a class="nav-link" href="#location" data-target="location">Location</a></li>
         <li><a class="nav-link" href="#contact" data-target="contact">Contact</a></li>
       </ul>
     </nav>
@@ -485,10 +603,10 @@
   </div>
 
   <nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
-    <a class="nav-link" href="#why" data-target="why">Today's Board</a>
-    <a class="nav-link" href="#programs" data-target="programs">Timetable</a>
-    <a class="nav-link" href="#results" data-target="results">Chalk Talk</a>
-    <a class="nav-link" href="#location" data-target="location">Noticeboard</a>
+    <a class="nav-link" href="#why" data-target="why">Why Us</a>
+    <a class="nav-link" href="#programs" data-target="programs">Programs</a>
+    <a class="nav-link" href="#results" data-target="results">Reviews</a>
+    <a class="nav-link" href="#location" data-target="location">Location</a>
     <a class="nav-link" href="#contact" data-target="contact">Contact</a>
     <div class="mobile-call">
       <a class="btn btn-solid" style="width:100%; justify-content:center;" href="tel:+919772774800">Call 97727 74800</a>
@@ -530,6 +648,16 @@
 
     <span class="chalk-scrawl scrawl-1">∠ABC = 90°</span>
     <span class="chalk-scrawl scrawl-2">a² + b² = c²</span>
+
+    <div class="chalk-dust-field" aria-hidden="true">
+      <span class="chalk-dust" style="left:8%; top:78%; width:3px; height:3px; animation-duration:8s; animation-delay:0s;"></span>
+      <span class="chalk-dust" style="left:22%; top:85%; width:2px; height:2px; animation-duration:11s; animation-delay:1.5s;"></span>
+      <span class="chalk-dust" style="left:38%; top:70%; width:3px; height:3px; animation-duration:9.5s; animation-delay:3s;"></span>
+      <span class="chalk-dust" style="left:55%; top:88%; width:2px; height:2px; animation-duration:10s; animation-delay:0.8s;"></span>
+      <span class="chalk-dust" style="left:70%; top:76%; width:3px; height:3px; animation-duration:12s; animation-delay:4s;"></span>
+      <span class="chalk-dust" style="left:88%; top:82%; width:2px; height:2px; animation-duration:9s; animation-delay:2.2s;"></span>
+    </div>
+
     <svg class="chalk-diagram" id="chalkDiagram" viewBox="0 0 300 300" aria-hidden="true">
       <circle cx="150" cy="140" r="78"/>
       <circle class="dot" cx="150" cy="140" r="3"/>
@@ -551,7 +679,7 @@
       <div class="section-head reveal">
         <span class="eyebrow">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="1"/><path d="M3 9h18"/></svg>
-          On the board today
+          What parents ask us
         </span>
         <h2 id="why-heading">Four things every parent asks about — answered before you ask.</h2>
       </div>
@@ -595,7 +723,7 @@
       <div class="section-head reveal">
         <span class="eyebrow">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-          This week's timetable
+          Our programs
         </span>
         <h2 id="programs-heading">A clear path from Class 6 to board results and beyond.</h2>
       </div>
@@ -654,7 +782,7 @@
       <div class="section-head reveal">
         <span class="eyebrow">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2l2.9 6.26L21 9.27l-4.5 4.38L17.8 21 12 17.77 6.2 21l1.3-7.35L3 9.27l6.1-1.01L12 2z"/></svg>
-          Chalk talk
+          What families say
         </span>
         <h2 id="results-heading">Rated 4.8 out of 5 by Bikaner families.</h2>
       </div>
@@ -663,7 +791,7 @@
         <div class="rating-slate reveal">
           <div class="rating-number">
             <span class="circle-wrap">
-              4.8
+              <span class="value" id="ratingValue" data-target="4.8">4.8</span>
               <svg class="ring" viewBox="0 0 100 100" aria-hidden="true"><ellipse cx="50" cy="50" rx="46" ry="42" transform="rotate(-4 50 50)"/></svg>
             </span>
           </div>
@@ -702,7 +830,7 @@
       <div class="section-head reveal">
         <span class="eyebrow">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          Pinned to the noticeboard
+          Visit us
         </span>
         <h2 id="location-heading">Opposite Sitaram Gate, inside Wings International School campus.</h2>
       </div>
@@ -739,6 +867,10 @@
               Open in Maps
             </a>
             <div class="map-pin-frame">
+              <div class="map-fallback" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <p>Wings International School Campus, Opposite Sitaram Gate, Bikaner</p>
+              </div>
               <iframe
                 src="https://www.google.com/maps?q=28.0202669,73.2952875&z=16&output=embed"
                 title="Map showing Access Career Institute location in Bikaner"
@@ -757,7 +889,7 @@
     <div class="wrap">
       <div class="bell-banner reveal">
         <svg class="bell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
-        <h2 id="contact-heading">The bell's about to ring — call before the batch fills.</h2>
+        <h2 id="contact-heading">Ready to enroll? Call before your child's batch fills up.</h2>
         <p>Call or message to check seat availability for your child's class. Most queries get a same-day response.</p>
         <a class="bell-phone" href="tel:+919772774800">+91 97727 74800</a>
         <div class="btn-row">
@@ -793,10 +925,10 @@
       <div>
         <h4>Quick Links</h4>
         <ul>
-          <li><a href="#why">Today's Board</a></li>
-          <li><a href="#programs">Timetable</a></li>
-          <li><a href="#results">Chalk Talk</a></li>
-          <li><a href="#location">Noticeboard</a></li>
+          <li><a href="#why">Why Us</a></li>
+          <li><a href="#programs">Programs</a></li>
+          <li><a href="#results">Reviews</a></li>
+          <li><a href="#location">Location</a></li>
         </ul>
       </div>
       <div>
@@ -849,6 +981,62 @@
       navToggle.setAttribute('aria-expanded', 'false');
     });
   });
+
+  // Reduced-motion preference, checked once and reused below
+  var prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Scroll progress bar + header depth-on-scroll
+  var scrollProgress = document.getElementById('scrollProgress');
+  var siteHeader = document.querySelector('.site-header');
+  function onScrollUpdate(){
+    var doc = document.documentElement;
+    var scrollTop = window.scrollY || doc.scrollTop;
+    var max = (doc.scrollHeight - doc.clientHeight) || 1;
+    var pct = Math.min(100, Math.max(0, (scrollTop / max) * 100));
+    if (scrollProgress) scrollProgress.style.width = pct + '%';
+    if (siteHeader) siteHeader.classList.toggle('is-scrolled', scrollTop > 8);
+  }
+  window.addEventListener('scroll', onScrollUpdate, { passive: true });
+  window.addEventListener('resize', onScrollUpdate);
+  onScrollUpdate();
+
+  // Animated count-up for the 4.8 rating, once it scrolls into view
+  var ratingValue = document.getElementById('ratingValue');
+  if (ratingValue){
+    var ratingTarget = parseFloat(ratingValue.getAttribute('data-target')) || 0;
+    var ratingSlate = document.querySelector('.rating-slate');
+    function animateRating(){
+      if (prefersReducedMotion || !('requestAnimationFrame' in window)){
+        ratingValue.textContent = ratingTarget.toFixed(1);
+        return;
+      }
+      ratingValue.textContent = '0.0';
+      var duration = 1100;
+      var start = null;
+      function step(ts){
+        if (start === null) start = ts;
+        var progress = Math.min((ts - start) / duration, 1);
+        var eased = 1 - Math.pow(1 - progress, 3);
+        ratingValue.textContent = (ratingTarget * eased).toFixed(1);
+        if (progress < 1) requestAnimationFrame(step);
+        else ratingValue.textContent = ratingTarget.toFixed(1);
+      }
+      requestAnimationFrame(step);
+    }
+    if ('IntersectionObserver' in window && ratingSlate){
+      var ratingIO = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if (entry.isIntersecting){
+            animateRating();
+            ratingIO.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+      ratingIO.observe(ratingSlate);
+    } else {
+      animateRating();
+    }
+  }
 
   var revealEls = document.querySelectorAll('.reveal, #chalkDiagram');
   if ('IntersectionObserver' in window){
