@@ -1,1128 +1,620 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Access Career Institute — Bikaner</title>
-<meta name="description" content="Access Career Institute, Bikaner — small-batch coaching for Classes 6–12. Board exam mastery, competitive foundation, real blackboard teaching. Rated 4.8★ on Google. Opposite Sitaram Gate.">
-<meta name="theme-color" content="#24382C">
+<meta name="description" content="Access Career Institute, Bikaner — small-batch coaching for Classes 6–12. Board exam mastery, competitive foundation, real blackboard teaching. Rated 4.8★ on Google. Opposite Sitaram Gate." />
+<meta property="og:title" content="Access Career Institute — Bikaner" />
+<meta property="og:description" content="Small-batch coaching for Classes 6–12. From first chalk mark to final exam mark. Rated 4.8★ on Google." />
+<meta property="og:type" content="website" />
+<meta name="theme-color" content="#14171F" />
 
-<meta property="og:title" content="Access Career Institute — Bikaner">
-<meta property="og:description" content="Small-batch coaching for Classes 6–12. From first chalk mark to final exam mark. Rated 4.8★ on Google.">
-<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%2314171F'/%3E%3Ctext x='50' y='68' font-family='monospace' font-size='60' font-weight='700' fill='%23F2C14E' text-anchor='middle'%3E+%3C/text%3E%3C/svg%3E" />
 
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%2324382C'/%3E%3Ccircle cx='32' cy='32' r='16' fill='none' stroke='%23F5F3EC' stroke-width='2.5'/%3E%3Ccircle cx='32' cy='32' r='2.5' fill='%23E8C468'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet" />
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Work+Sans:wght@400;500;600;700&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "EducationalOrganization",
-  "name": "Access Career Institute",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Wings International School Campus, Opposite Sitaram Gate, Jawahar Nagar",
-    "addressLocality": "Bikaner",
-    "addressRegion": "Rajasthan",
-    "postalCode": "334001",
-    "addressCountry": "IN"
-  },
-  "geo": { "@type": "GeoCoordinates", "latitude": 28.0202669, "longitude": 73.2952875 },
-  "telephone": "+91-97727-74800",
-  "openingHoursSpecification": [
-    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "16:00", "closes": "20:00" },
-    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Sunday"], "opens": "08:30", "closes": "13:00" }
-  ],
-  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "17" }
-}
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink: '#14171F',
+          board: '#1B2030',
+          boardsoft: '#232A3D',
+          chalk: '#ECE7DA',
+          chalkdim: '#A9AEBE',
+          'marker-yellow': '#F2C14E',
+          'marker-coral': '#FF6B5B',
+          'marker-teal': '#58D6C9',
+        },
+        fontFamily: {
+          display: ['"Space Grotesk"', 'sans-serif'],
+          sans: ['Inter', 'sans-serif'],
+          mono: ['"IBM Plex Mono"', 'monospace'],
+        },
+      },
+    },
+  };
 </script>
 
 <style>
-  :root{
-    --board: #24382C;
-    --board-deep: #1B2C22;
-    --wood: #5A3A22;
-    --wood-deep: #432A18;
-    --chalk: #F5F3EC;
-    --chalk-muted: rgba(245,243,236,0.68);
-    --chalk-yellow: #E8C468;
-    --chalk-coral: #E8927C;
-    --paper: #F1E9D2;
-    --paper-line: #D9C89C;
-    --ink: #2E2A22;
-    --ink-soft: #5C5644;
-    --cork: #8B6A4B;
-    --cork-deep: #6E5238;
-    --white: #FFFFFF;
-
-    --font-display: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
-    --font-body: 'Work Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
-    --font-chalk: 'Caveat', cursive;
-
-    --wrap: 1180px;
-    --radius: 10px;
+  /* Faint graph-paper grid across the whole page — the "squared paper" of a maths notebook */
+  body {
+    background-color: #14171F;
+    background-image:
+      linear-gradient(rgba(88, 214, 201, 0.055) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(88, 214, 201, 0.055) 1px, transparent 1px);
+    background-size: 42px 42px;
   }
 
-  *{ box-sizing: border-box; }
-  html{ scroll-behavior: smooth; }
-  @media (prefers-reduced-motion: reduce){
-    html{ scroll-behavior: auto; }
-    *, *::before, *::after{ animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+  ::selection { background: #F2C14E; color: #14171F; }
+
+  :focus-visible {
+    outline: 2px solid #58D6C9;
+    outline-offset: 3px;
+    border-radius: 2px;
   }
 
-  body{
-    margin: 0;
-    font-family: var(--font-body);
-    color: var(--ink);
-    background: var(--paper);
-    line-height: 1.55;
-    -webkit-font-smoothing: antialiased;
-  }
-  img{ max-width: 100%; display: block; }
-  a{ color: inherit; }
-  h1,h2,h3{ font-family: var(--font-display); margin: 0; color: inherit; }
-  p{ margin: 0; }
-  ul{ margin: 0; padding: 0; list-style: none; }
-  button{ font: inherit; }
-  table{ border-collapse: collapse; width: 100%; }
-
-  .wrap{ max-width: var(--wrap); margin-inline: auto; padding-inline: 20px; }
-  @media (min-width: 768px){ .wrap{ padding-inline: 32px; } }
-
-  .eyebrow{
-    font-family: var(--font-chalk);
-    font-size: 1.15rem;
-    font-weight: 600;
-    color: var(--chalk-yellow);
-    display: inline-flex; align-items: center; gap: 8px;
-    transform: rotate(-1deg);
-  }
-  section[data-tone="paper"] .eyebrow{ color: var(--cork-deep); }
-  .eyebrow svg{ width: 18px; height: 18px; }
-
-  .skip-link{
-    position: absolute; left: -999px; top: 0;
-    background: var(--chalk-yellow); color: var(--ink);
-    padding: 12px 18px; z-index: 1000; border-radius: 0 0 8px 0; font-weight: 700;
-  }
-  .skip-link:focus{ left: 0; }
-  a:focus-visible, button:focus-visible{ outline: 3px solid var(--chalk-yellow); outline-offset: 3px; border-radius: 4px; }
-
-  /* ============ NO-JS SAFETY NET ============ */
-  .no-js-visible{ opacity: 1 !important; transform: none !important; }
-
-  /* ============ BUTTONS (chalk-sketch style) ============ */
-  .btn{
-    display: inline-flex; align-items: center; gap: 9px;
-    padding: 12px 22px;
-    border-radius: 7px;
-    font-weight: 600; font-size: 0.95rem;
-    text-decoration: none; cursor: pointer;
-    border: 2px dashed transparent;
-    transition: transform 0.18s ease, background 0.18s ease, box-shadow 0.18s ease;
-    white-space: nowrap;
-  }
-  .btn:hover{ transform: translateY(-2px) rotate(-0.4deg); }
-  .btn-chalk{
-    background: transparent; color: var(--chalk); border-color: rgba(245,243,236,0.55);
-    box-shadow: 3px 3px 0 rgba(245,243,236,0.14);
-  }
-  .btn-chalk:hover{ background: rgba(245,243,236,0.08); border-color: var(--chalk-yellow); }
-  .btn-solid{
-    background: var(--chalk-yellow); color: var(--wood-deep); border-color: var(--chalk-yellow);
-    box-shadow: 3px 3px 0 rgba(0,0,0,0.18);
-  }
-  .btn-solid:hover{ background: #f0d488; }
-  .btn-ink{
-    background: transparent; color: var(--ink); border-color: var(--ink-soft);
-  }
-  .btn-ink:hover{ border-color: var(--cork-deep); color: var(--cork-deep); background: rgba(139,106,75,0.08); }
-  .btn svg{ width: 18px; height: 18px; flex-shrink: 0; }
-
-  /* ============ HEADER ============ */
-  .site-header{
-    position: sticky; top: 0; z-index: 100;
-    background: var(--wood);
-    border-bottom: 3px solid var(--wood-deep);
-  }
-  .header-row{ display: flex; align-items: center; justify-content: space-between; padding-block: 12px; color: var(--chalk); }
-  .brand{ display: flex; align-items: center; gap: 11px; text-decoration: none; color: var(--chalk); }
-  .brand-mark{ width: 40px; height: 40px; flex-shrink: 0; }
-  .brand-text strong{ font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; display: block; }
-  .brand-text span{ font-family: var(--font-chalk); font-size: 0.95rem; color: var(--chalk-yellow); }
-
-  .main-nav{ display: none; }
-  .main-nav ul{ display: flex; gap: 26px; }
-  .main-nav a{ text-decoration: none; color: var(--chalk-muted); font-size: 0.9rem; font-weight: 500; padding-block: 6px; border-bottom: 2px solid transparent; transition: color 0.18s ease, border-color 0.18s ease; }
-  .main-nav a:hover, .main-nav a.active{ color: var(--chalk); border-color: var(--chalk-yellow); }
-
-  .header-actions{ display: flex; align-items: center; gap: 10px; }
-  .header-call{ display: none; }
-  .icon-btn{
-    display: none; align-items: center; justify-content: center;
-    width: 42px; height: 42px; border-radius: 8px;
-    background: transparent; border: 2px solid rgba(245,243,236,0.4); color: var(--chalk);
-    cursor: pointer;
-  }
-  .icon-btn:hover{ border-color: var(--chalk-yellow); }
-  .icon-btn svg{ width: 18px; height: 18px; }
-  .copy-btn-block{
-    display: flex; align-items: center; justify-content: center; gap: 8px;
-    width: 100%; margin-top: 10px; padding: 12px;
-    background: transparent; border: 2px dashed rgba(245,243,236,0.4); color: var(--chalk);
-    border-radius: 7px; cursor: pointer; font-weight: 600; font-size: 0.92rem;
-  }
-  .copy-btn-block svg{ width: 17px; height: 17px; }
-  .nav-toggle{ background: transparent; border: 2px solid rgba(245,243,236,0.4); color: var(--chalk); width: 42px; height: 42px; border-radius: 8px; display: inline-flex; align-items: center; justify-content: center; }
-  .nav-toggle svg{ width: 22px; height: 22px; }
-
-  .mobile-nav{ display: none; flex-direction: column; background: var(--wood-deep); }
-  .mobile-nav.is-open{ display: flex; }
-  .mobile-nav a{ color: var(--chalk); text-decoration: none; padding: 15px 20px; border-bottom: 1px solid rgba(245,243,236,0.12); font-weight: 500; }
-  .mobile-nav a.active{ color: var(--chalk-yellow); background: rgba(245,243,236,0.05); }
-  .mobile-nav .mobile-call{ padding: 16px 20px; }
-
-  @media (min-width: 900px){
-    .main-nav{ display: block; }
-    .header-call{ display: inline-flex; }
-    .icon-btn{ display: inline-flex; }
-    .nav-toggle{ display: none; }
-    .mobile-nav{ display: none !important; }
-  }
-
-  /* ============ TOAST ============ */
-  .toast{
-    position: fixed; left: 50%; bottom: 26px; transform: translateX(-50%) translateY(20px);
-    background: var(--wood-deep); color: var(--chalk); border: 2px solid var(--chalk-yellow);
-    padding: 12px 20px; border-radius: 7px; font-size: 0.88rem; font-weight: 600;
-    display: flex; align-items: center; gap: 8px;
-    opacity: 0; pointer-events: none; z-index: 200;
-    transition: opacity 0.25s ease, transform 0.25s ease;
-  }
-  .toast.is-shown{ opacity: 1; transform: translateX(-50%) translateY(0); }
-  .toast svg{ width: 16px; height: 16px; color: var(--chalk-yellow); flex-shrink: 0; }
-
-  /* ============ MOBILE ACTION BAR ============ */
-  .mobile-action-bar{
-    position: fixed; left: 0; right: 0; bottom: 0; z-index: 90;
-    display: grid; grid-template-columns: repeat(3, 1fr);
-    background: var(--wood-deep); border-top: 2px solid var(--wood);
-    padding-bottom: env(safe-area-inset-bottom, 0);
-  }
-  .mobile-action-bar a{
-    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;
-    padding: 10px 4px 12px; color: var(--chalk-muted); text-decoration: none; font-size: 0.7rem; font-weight: 600;
-    border-right: 1px solid rgba(245,243,236,0.1);
-  }
-  .mobile-action-bar a:last-child{ border-right: none; }
-  .mobile-action-bar a svg{ width: 20px; height: 20px; }
-  .mobile-action-bar a.is-primary{ color: var(--chalk-yellow); }
-  @media (min-width: 900px){ .mobile-action-bar{ display: none; } }
-
-  /* ============ MAP FALLBACK BADGE ============ */
-  .map-frame-wrap{ position: relative; }
-  .map-open-badge{
-    position: absolute; top: 12px; right: 12px; z-index: 5;
-    display: inline-flex; align-items: center; gap: 6px;
-    background: rgba(67,42,24,0.92); color: var(--chalk); text-decoration: none;
-    padding: 8px 12px; border-radius: 7px; font-size: 0.78rem; font-weight: 600;
-    border: 1px solid rgba(245,243,236,0.3);
-  }
-  .map-open-badge svg{ width: 14px; height: 14px; }
-
-  /* Reserve space for the fixed mobile action bar, including safe-area inset */
-  @media (max-width: 899px){ body{ padding-bottom: calc(66px + env(safe-area-inset-bottom, 0px)); } }
-
-  /* ============ HERO (blackboard) ============ */
-  .hero{
-    position: relative; overflow: hidden;
-    background: var(--board);
-    color: var(--chalk);
-    padding-block: 60px 76px;
-  }
-  .hero::before{
-    content: "";
-    position: absolute; inset: 0;
-    background-image: radial-gradient(rgba(245,243,236,0.06) 1px, transparent 1.3px);
-    background-size: 22px 22px;
-    pointer-events: none;
-  }
-  .hero-inner{ position: relative; z-index: 2; max-width: 700px; }
-  .hero h1{
-    font-size: clamp(2rem, 5.4vw, 3.1rem);
-    font-weight: 700; line-height: 1.14; letter-spacing: -0.01em;
-    margin-block: 16px 18px;
-  }
-  .hero h1 .underline{ position: relative; display: inline-block; }
-  .hero h1 .underline svg{ position: absolute; left: 0; bottom: -6px; width: 100%; height: 12px; }
-  .hero-sub{ font-size: 1.05rem; color: var(--chalk-muted); max-width: 56ch; margin-bottom: 28px; }
-  .hero-ctas{ display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 34px; }
-
-  .hero-facts{ display: grid; gap: 12px; }
-  .hero-fact{ display: flex; align-items: flex-start; gap: 10px; font-size: 0.98rem; color: var(--chalk-muted); font-family: var(--font-body); font-weight: 500; }
-  .hero-fact svg{ width: 19px; height: 19px; flex-shrink: 0; color: var(--chalk-yellow); margin-top: 3px; }
-  .hero-fact strong{ color: var(--chalk); font-weight: 700; }
-  @media (min-width: 640px){ .hero-facts{ grid-template-columns: repeat(3, 1fr); } }
-
-  /* ---- Signature: chalk geometry diagram ---- */
-  /* Mobile-first: shown as a faint background watermark, tucked bottom-right
-     so it doesn't compete with the headline/body text sitting above it. */
-  .chalk-diagram{
-    position: absolute; right: -40px; bottom: -18px; top: auto;
-    width: 260px; height: 260px;
-    opacity: 0.4;
-    z-index: 1;
-    display: block;
-  }
-  @media (min-width: 900px){
-    .chalk-diagram{
-      right: -40px; top: 30px; bottom: auto;
-      width: 380px; height: 380px;
-      opacity: 0.9;
-    }
-  }
-  @media (max-width: 899px){
-    .chalk-diagram path, .chalk-diagram circle, .chalk-diagram line{ stroke-width: 2.2; }
-  }
-  .chalk-diagram path, .chalk-diagram circle, .chalk-diagram line{
-    stroke: var(--chalk); fill: none; stroke-width: 1.6; stroke-linecap: round;
-    stroke-dasharray: 900; stroke-dashoffset: 900;
-    transition: stroke-dashoffset 2.1s ease;
-  }
-  .chalk-diagram.is-visible path, .chalk-diagram.is-visible circle, .chalk-diagram.is-visible line{ stroke-dashoffset: 0; }
-  .chalk-diagram .accent{ stroke: var(--chalk-yellow); }
-  .chalk-diagram .dot{ stroke: none; fill: var(--chalk-yellow); }
-
-  .chalk-scrawl{
+  /* Floating math-operator field — the page's signature effect */
+  .math-field {
     position: absolute;
-    font-family: var(--font-chalk);
-    color: var(--chalk-yellow);
-    font-size: 1.3rem;
-    opacity: 0.85;
-    display: none;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
   }
-  @media (min-width: 900px){ .chalk-scrawl{ display: block; } }
-  .scrawl-1{ top: 18px; right: 60px; transform: rotate(-6deg); }
-  .scrawl-2{ top: 300px; right: 40px; transform: rotate(4deg); color: var(--chalk); opacity: 0.7; }
-
-  /* ============ SECTION SCAFFOLD ============ */
-  section{ padding-block: 64px; }
-  section[data-tone="paper"]{ background: var(--paper); }
-  section[data-tone="board"]{ background: var(--board); color: var(--chalk); }
-  section[data-tone="board-deep"]{ background: var(--board-deep); color: var(--chalk); }
-  section[data-tone="cork"]{ background: var(--cork); color: var(--chalk); }
-  .section-head{ max-width: 640px; margin-bottom: 36px; }
-  .section-head h2{ font-size: clamp(1.5rem, 3.2vw, 2.1rem); font-weight: 700; line-height: 1.2; margin-top: 10px; }
-  .section-head p{ margin-top: 12px; color: var(--ink-soft); font-size: 1rem; }
-  section[data-tone="board"] .section-head p, section[data-tone="board-deep"] .section-head p, section[data-tone="cork"] .section-head p{ color: var(--chalk-muted); }
-
-  .reveal{ opacity: 0; transform: translateY(16px); transition: opacity 0.6s ease, transform 0.6s ease; }
-  .reveal.is-visible{ opacity: 1; transform: translateY(0); }
-
-  /* ============ TODAY'S BOARD (why) ============ */
-  .agenda-list{ display: grid; gap: 14px; }
-  @media (min-width: 700px){ .agenda-list{ grid-template-columns: repeat(2, 1fr); } }
-  .agenda-item{
-    display: flex; gap: 16px; align-items: flex-start;
-    background: var(--white); border: 1px solid var(--paper-line); border-radius: var(--radius);
-    padding: 20px;
-  }
-  .agenda-num{
-    font-family: var(--font-chalk); font-size: 1.6rem; font-weight: 700; color: var(--cork);
-    width: 34px; flex-shrink: 0;
-  }
-  .agenda-item h3{ font-size: 1.05rem; font-weight: 700; margin-bottom: 6px; }
-  .agenda-item p{ font-size: 0.97rem; line-height: 1.6; color: var(--ink-soft); }
-
-  /* ============ TIMETABLE (programs) ============ */
-  .timetable-wrap{ overflow-x: auto; border-radius: var(--radius); border: 1px solid rgba(245,243,236,0.16); }
-  .timetable{ min-width: 720px; }
-  .timetable th, .timetable td{ text-align: left; padding: 16px 18px; vertical-align: top; font-size: 0.92rem; }
-  .timetable thead th{
-    font-family: var(--font-display); font-weight: 700; font-size: 1rem;
-    background: var(--board-deep); border-bottom: 2px solid var(--chalk-yellow);
-  }
-  .timetable thead th:first-child{ background: transparent; }
-  .timetable tbody th{
-    font-family: var(--font-chalk); font-size: 1.15rem; color: var(--chalk-yellow); font-weight: 600;
-    white-space: nowrap; background: rgba(245,243,236,0.03);
-  }
-  .timetable tbody td{ color: var(--chalk-muted); border-top: 1px solid rgba(245,243,236,0.1); }
-  .timetable tbody th{ border-top: 1px solid rgba(245,243,236,0.1); }
-  .program-note{ margin-top: 24px; font-size: 0.95rem; line-height: 1.6; color: var(--chalk-muted); }
-
-  /* ============ CHALK TALK (results) ============ */
-  .results-layout{ display: grid; gap: 32px; }
-  @media (min-width: 900px){ .results-layout{ grid-template-columns: 0.75fr 1.25fr; align-items: start; } }
-  .rating-slate{
-    background: var(--board-deep); border-radius: var(--radius); padding: 30px; text-align: center;
-    border: 2px solid rgba(245,243,236,0.12);
-  }
-  .rating-number{ font-family: var(--font-chalk); font-size: 4.2rem; font-weight: 700; line-height: 1; color: var(--chalk); }
-  .rating-number .circle-wrap{ position: relative; display: inline-block; }
-  .rating-number svg.ring{ position: absolute; inset: -14px; width: calc(100% + 28px); height: calc(100% + 28px); }
-  .rating-number svg.ring ellipse{ fill: none; stroke: var(--chalk-yellow); stroke-width: 2.5; }
-  .stars-row{ display: flex; gap: 5px; justify-content: center; margin: 14px 0 10px; }
-  .stars-row svg{ width: 22px; height: 22px; color: var(--chalk-yellow); }
-  .rating-count{ font-size: 0.86rem; color: var(--chalk-muted); }
-  .rating-link{ margin-top: 16px; display: inline-block; font-size: 0.86rem; font-weight: 600; color: var(--chalk-yellow); text-decoration: none; border-bottom: 1.5px solid var(--chalk-yellow); }
-
-  .slate-list{ display: grid; gap: 14px; }
-  .slate-card{
-    background: var(--board-deep); border-radius: var(--radius); padding: 18px 20px;
-    border-left: 4px solid var(--chalk-yellow);
-  }
-  .slate-card p{ font-family: var(--font-body); font-style: italic; font-weight: 500; font-size: 1.05rem; color: var(--chalk); line-height: 1.55; }
-  .slate-caption{ margin-top: 8px; font-size: 0.78rem; color: var(--chalk-muted); font-family: var(--font-body); }
-
-  /* ============ NOTICEBOARD (location) ============ */
-  .noticeboard{
-    background-color: var(--cork);
-    background-image: radial-gradient(rgba(0,0,0,0.12) 1px, transparent 1.4px);
-    background-size: 14px 14px;
-    border-radius: var(--radius);
-    padding: 34px 22px;
-  }
-  .notice-grid{ display: grid; gap: 26px; }
-  @media (min-width: 900px){ .notice-grid{ grid-template-columns: 1fr 1fr; align-items: start; } }
-  .pinned-note{
-    position: relative;
-    background: var(--paper);
-    border: 1px solid var(--paper-line);
-    border-radius: 4px;
-    padding: 26px 22px 22px;
-    transform: rotate(-1deg);
-    box-shadow: 0 10px 22px rgba(0,0,0,0.22);
-  }
-  .pinned-note::before{
-    content: "";
-    position: absolute; top: -9px; left: 50%; transform: translateX(-50%);
-    width: 16px; height: 16px; border-radius: 50%;
-    background: radial-gradient(circle at 35% 30%, #f2a4a4, #a02c2c 70%);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.35);
-  }
-  .pinned-note address{ font-style: normal; font-size: 0.98rem; line-height: 1.65; color: var(--ink); }
-  .pinned-note .note-label{ font-family: var(--font-chalk); font-size: 1.3rem; color: var(--cork-deep); display: block; margin-bottom: 10px; }
-  .hours-table{ display: grid; gap: 8px; font-size: 0.92rem; margin-top: 16px; }
-  .hours-row{ display: flex; justify-content: space-between; border-bottom: 1px dashed var(--paper-line); padding-bottom: 8px; color: var(--ink); }
-  .hours-row span:last-child{ font-weight: 700; }
-  .notice-ctas{ display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
-  .map-pin-frame{
-    position: relative; transform: rotate(1deg);
-    border: 6px solid var(--paper); border-radius: 4px;
-    box-shadow: 0 10px 22px rgba(0,0,0,0.25);
-    overflow: hidden; min-height: 320px;
-  }
-  .map-pin-frame::before{
-    content: "";
-    position: absolute; top: -9px; left: 50%; transform: translateX(-50%);
-    width: 16px; height: 16px; border-radius: 50%; z-index: 2;
-    background: radial-gradient(circle at 35% 30%, #a4d3f2, #2c6ea0 70%);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.35);
-  }
-  .map-pin-frame iframe{ position: absolute; inset: 0; width: 100%; height: 100%; border: 0; display: block; background: var(--board-deep); }
-  .map-fallback{
-    position: absolute; inset: 0;
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    gap: 12px; text-align: center; padding: 24px;
-    background: var(--board-deep); color: var(--chalk);
-  }
-  .map-fallback svg{ width: 34px; height: 34px; color: var(--chalk-yellow); }
-  .map-fallback p{ font-size: 0.92rem; color: var(--chalk-muted); max-width: 28ch; line-height: 1.5; }
-
-  /* ============ CONTACT BANNER ============ */
-  .bell-banner{
-    background: linear-gradient(135deg, var(--wood) 0%, var(--wood-deep) 100%);
-    border-radius: var(--radius); padding: 44px 28px; text-align: center; color: var(--chalk);
-  }
-  .bell-banner svg.bell{ width: 44px; height: 44px; color: var(--chalk-yellow); margin-bottom: 14px; }
-  .bell-banner h2{ font-size: clamp(1.4rem, 3.4vw, 2rem); font-weight: 700; }
-  .bell-banner p{ margin-top: 10px; color: var(--chalk-muted); max-width: 46ch; margin-inline: auto; }
-  .bell-phone{ display: block; font-family: var(--font-display); font-size: clamp(1.7rem, 4.6vw, 2.4rem); font-weight: 700; margin-block: 18px 4px; text-decoration: none; color: var(--chalk); }
-  .bell-banner .btn-row{ display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-top: 20px; }
-
-  /* ============ FOOTER ============ */
-  footer{ background: var(--wood-deep); color: var(--chalk-muted); padding-block: 40px 26px; font-size: 0.87rem; }
-  .footer-grid{ display: grid; gap: 26px; margin-bottom: 28px; }
-  @media (min-width: 760px){ .footer-grid{ grid-template-columns: 1.4fr 1fr 1fr; } }
-  .footer-brand{ display: flex; align-items: center; gap: 10px; color: var(--chalk); margin-bottom: 12px; }
-  .footer-brand strong{ font-family: var(--font-display); font-size: 1.05rem; }
-  .footer-brand svg{ width: 28px; height: 28px; }
-  footer h4{ color: var(--chalk); font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 12px; font-weight: 700; }
-  footer ul{ display: grid; gap: 9px; }
-  footer a{ text-decoration: none; color: var(--chalk-muted); }
-  footer a:hover{ color: var(--chalk-yellow); }
-  .footer-bottom{ border-top: 1px solid rgba(245,243,236,0.12); padding-top: 18px; display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between; }
-
-  /* ============================================================
-     ENGAGEMENT & MOTION — chalk-consistent micro-interactions
-     All keyframe/transition durations are neutralised globally by
-     the prefers-reduced-motion rule declared near the top of file.
-     ============================================================ */
-
-  /* ---- Scroll progress: a chalk line filling in as you read ---- */
-  .scroll-progress{
-    position: fixed; top: 0; left: 0; height: 3px; width: 0%;
-    background: linear-gradient(90deg, var(--chalk-yellow), var(--chalk-coral));
-    z-index: 210;
-    transition: width 0.12s linear;
-  }
-
-  /* ---- Sticky header gains depth once the page has scrolled ---- */
-  .site-header{ transition: box-shadow 0.25s ease; }
-  .site-header.is-scrolled{ box-shadow: 0 8px 20px rgba(0,0,0,0.28); }
-
-  /* ---- Hero: staggered curtain-rise on first paint ---- */
-  .hero-inner > *{
-    animation-name: heroFadeIn;
-    animation-duration: 0.6s;
-    animation-timing-function: ease;
-    animation-fill-mode: both;
-  }
-  .hero-inner > .eyebrow{ animation-delay: 0.05s; }
-  .hero-inner > h1{ animation-delay: 0.18s; }
-  .hero-inner > .hero-sub{ animation-delay: 0.34s; }
-  .hero-inner > .hero-ctas{ animation-delay: 0.5s; }
-  .hero-inner > .hero-facts{ animation-delay: 0.64s; }
-  @keyframes heroFadeIn{ from{ opacity: 0; } }
-
-  /* ---- Hero underline: draws itself like chalk on a board ---- */
-  .hero h1 .underline svg path{
-    stroke-dasharray: 260;
-    stroke-dashoffset: 260;
-    animation-name: chalkDrawUnderline;
-    animation-duration: 0.9s;
-    animation-timing-function: ease;
-    animation-delay: 0.75s;
-    animation-fill-mode: forwards;
-  }
-  @keyframes chalkDrawUnderline{ to{ stroke-dashoffset: 0; } }
-
-  /* ---- Ambient chalk dust drifting in the hero ---- */
-  .chalk-dust-field{ position: absolute; inset: 0; overflow: hidden; z-index: 1; pointer-events: none; }
-  .chalk-dust{
-    position: absolute; border-radius: 50%; background: var(--chalk); opacity: 0;
-    animation-name: chalkDustFloat;
-    animation-timing-function: ease-in-out;
+  .math-symbol {
+    position: absolute;
+    bottom: -10%;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 700;
+    line-height: 1;
+    animation-name: mathDrift;
+    animation-timing-function: linear;
     animation-iteration-count: infinite;
+    will-change: transform, opacity;
   }
-  @keyframes chalkDustFloat{
-    0%{ opacity: 0; transform: translate(0,0); }
-    12%{ opacity: 0.45; }
-    88%{ opacity: 0.2; }
-    100%{ opacity: 0; transform: translate(6px,-130px); }
+  @keyframes mathDrift {
+    0%   { transform: translate3d(0, 10vh, 0) rotate(0deg); opacity: 0; }
+    12%  { opacity: var(--op, .16); }
+    88%  { opacity: var(--op, .16); }
+    100% { transform: translate3d(var(--drift, 24px), -115vh, 0) rotate(18deg); opacity: 0; }
   }
 
-  /* ---- Staggered reveal for card-grid siblings ---- */
-  .agenda-list .agenda-item:nth-child(1){ transition-delay: 0.02s; }
-  .agenda-list .agenda-item:nth-child(2){ transition-delay: 0.1s; }
-  .agenda-list .agenda-item:nth-child(3){ transition-delay: 0.18s; }
-  .agenda-list .agenda-item:nth-child(4){ transition-delay: 0.26s; }
-  .slate-list .slate-card:nth-child(1){ transition-delay: 0.04s; }
-  .slate-list .slate-card:nth-child(2){ transition-delay: 0.16s; }
-  .slate-list .slate-card:nth-child(3){ transition-delay: 0.28s; }
+  /* Scroll reveal */
+  .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+  .reveal.is-visible { opacity: 1; transform: translateY(0); }
 
-  /* ---- Card hover lift — mirrors the existing chalk-sketch button tilt ---- */
-  .agenda-item{ transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease; }
-  .agenda-item:hover{ transform: translateY(-5px); box-shadow: 0 14px 26px rgba(46,42,34,0.14); border-color: var(--cork); }
+  /* Hand-drawn underline squiggle */
+  .chalk-underline { position: relative; white-space: nowrap; }
+  .chalk-underline svg { position: absolute; left: 0; bottom: -0.14em; width: 100%; height: 0.3em; }
 
-  .slate-card{ transition: transform 0.25s ease, background 0.25s ease; }
-  .slate-card:hover{ transform: translateY(-5px) rotate(-0.3deg); background: rgba(245,243,236,0.045); }
-
-  .rating-slate{ transition: box-shadow 0.25s ease, border-color 0.25s ease; }
-  .rating-slate:hover{ border-color: var(--chalk-yellow); box-shadow: 0 14px 30px rgba(0,0,0,0.22); }
-
-  .pinned-note{ transition: transform 0.25s ease, box-shadow 0.25s ease; }
-  .pinned-note:hover{ transform: rotate(-1deg) translateY(-4px); box-shadow: 0 16px 28px rgba(0,0,0,0.28); }
-
-  .map-pin-frame{ transition: transform 0.25s ease, box-shadow 0.25s ease; }
-  .map-pin-frame:hover{ transform: rotate(1deg) translateY(-4px); box-shadow: 0 16px 28px rgba(0,0,0,0.3); }
-
-  /* ---- Button tactile press ---- */
-  .btn:active{ transform: translateY(0) scale(0.97); }
-
-  /* ---- Rating number counter mount point ---- */
-  .rating-number .value{ display: inline-block; min-width: 2.6ch; }
-
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .math-symbol { animation: none !important; opacity: .12 !important; }
+    .reveal { transition: none !important; opacity: 1 !important; transform: none !important; }
+  }
 </style>
 </head>
-<body>
 
-<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+<body class="bg-ink text-chalk font-sans antialiased pb-16 md:pb-0">
 
-<noscript>
-  <style>
-    .reveal, #chalkDiagram{ opacity: 1 !important; transform: none !important; }
-    .chalk-diagram path, .chalk-diagram circle, .chalk-diagram line{ stroke-dashoffset: 0 !important; }
-  </style>
-</noscript>
+<a id="top"></a>
+<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:bg-marker-yellow focus:text-ink focus:px-4 focus:py-2 focus:rounded-md focus:font-semibold">
+  Skip to content
+</a>
 
-<a class="skip-link" href="#main">Skip to content</a>
-
-<header class="site-header">
-  <div class="wrap header-row">
-    <a class="brand" href="#top">
-      <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true">
-        <circle cx="32" cy="32" r="31" fill="#24382C" stroke="#E8C468" stroke-width="1.5"/>
-        <circle cx="32" cy="32" r="15" fill="none" stroke="#F5F3EC" stroke-width="2"/>
-        <circle cx="32" cy="32" r="2.5" fill="#E8C468"/>
-        <line x1="32" y1="32" x2="32" y2="17" stroke="#F5F3EC" stroke-width="2"/>
-      </svg>
-      <span class="brand-text">
-        <strong>Access</strong>
-        <span>Career Institute</span>
-      </span>
+<!-- ===================== HEADER ===================== -->
+<header class="sticky top-0 z-50 border-b border-white/5 bg-ink/85 backdrop-blur">
+  <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8 md:h-20">
+    <a href="#top" class="font-display text-lg font-bold tracking-tight text-chalk md:text-xl">
+      <span class="text-marker-yellow">Access</span> Career Institute
     </a>
 
-    <nav class="main-nav" aria-label="Primary">
-      <ul>
-        <li><a class="nav-link" href="#why" data-target="why">Why Us</a></li>
-        <li><a class="nav-link" href="#programs" data-target="programs">Programs</a></li>
-        <li><a class="nav-link" href="#results" data-target="results">Reviews</a></li>
-        <li><a class="nav-link" href="#location" data-target="location">Location</a></li>
-        <li><a class="nav-link" href="#contact" data-target="contact">Contact</a></li>
-      </ul>
+    <nav aria-label="Primary" class="hidden items-center gap-8 md:flex">
+      <a href="#why" class="text-sm font-medium text-chalkdim transition hover:text-chalk">Why Us</a>
+      <a href="#programs" class="text-sm font-medium text-chalkdim transition hover:text-chalk">Programs</a>
+      <a href="#results" class="text-sm font-medium text-chalkdim transition hover:text-chalk">Reviews</a>
+      <a href="#location" class="text-sm font-medium text-chalkdim transition hover:text-chalk">Location</a>
+      <a href="#contact" class="text-sm font-medium text-chalkdim transition hover:text-chalk">Contact</a>
     </nav>
 
-    <div class="header-actions">
-      <!-- FIX: tel: links no longer use target="_blank" (was leaving a blank tab on iOS/Android after dialer opens) -->
-      <a class="btn btn-solid header-call" href="tel:+919772774800">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        97727 74800
+    <div class="flex items-center gap-2">
+      <a href="tel:+919772774800" class="hidden items-center gap-2 rounded-full bg-marker-coral px-4 py-2 text-sm font-semibold text-ink transition hover:brightness-105 sm:inline-flex">
+        Call 97727 74800
       </a>
-      <button class="icon-btn copy-btn" data-phone="+919772774800" type="button" aria-label="Copy phone number">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+      <button type="button" data-copy="+91 97727 74800" class="hidden rounded-full border border-white/15 px-4 py-2 text-sm font-medium text-chalkdim transition hover:border-marker-teal hover:text-marker-teal md:inline-flex">
+        Copy Number
       </button>
-      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <button type="button" id="menu-btn" aria-controls="mobile-menu" aria-expanded="false" class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-chalk md:hidden" aria-label="Open menu">
+        <svg id="menu-icon-open" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg id="menu-icon-close" xmlns="http://www.w3.org/2000/svg" class="hidden h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
       </button>
     </div>
   </div>
 
-  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
-    <a class="nav-link" href="#why" data-target="why">Why Us</a>
-    <a class="nav-link" href="#programs" data-target="programs">Programs</a>
-    <a class="nav-link" href="#results" data-target="results">Reviews</a>
-    <a class="nav-link" href="#location" data-target="location">Location</a>
-    <a class="nav-link" href="#contact" data-target="contact">Contact</a>
-    <div class="mobile-call">
-      <a class="btn btn-solid" style="width:100%; justify-content:center;" href="tel:+919772774800">Call 97727 74800</a>
-      <button class="copy-btn-block copy-btn" data-phone="+919772774800" type="button">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-        Copy Number
-      </button>
-    </div>
-  </nav>
+  <div id="mobile-menu" class="hidden border-t border-white/5 bg-ink px-4 pb-5 pt-3 md:hidden">
+    <nav aria-label="Mobile" class="flex flex-col gap-1">
+      <a href="#why" class="rounded-lg px-3 py-2.5 text-sm font-medium text-chalkdim hover:bg-white/5 hover:text-chalk">Why Us</a>
+      <a href="#programs" class="rounded-lg px-3 py-2.5 text-sm font-medium text-chalkdim hover:bg-white/5 hover:text-chalk">Programs</a>
+      <a href="#results" class="rounded-lg px-3 py-2.5 text-sm font-medium text-chalkdim hover:bg-white/5 hover:text-chalk">Reviews</a>
+      <a href="#location" class="rounded-lg px-3 py-2.5 text-sm font-medium text-chalkdim hover:bg-white/5 hover:text-chalk">Location</a>
+      <a href="#contact" class="rounded-lg px-3 py-2.5 text-sm font-medium text-chalkdim hover:bg-white/5 hover:text-chalk">Contact</a>
+      <a href="tel:+919772774800" class="mt-2 rounded-full bg-marker-coral px-4 py-2.5 text-center text-sm font-semibold text-ink">Call 97727 74800</a>
+      <button type="button" data-copy="+91 97727 74800" class="mt-1 rounded-full border border-white/15 px-4 py-2.5 text-sm font-medium text-chalkdim">Copy Number</button>
+    </nav>
+  </div>
 </header>
 
 <main id="main">
 
-  <!-- ============ HERO ============ -->
-  <section id="top" class="hero">
-    <div class="wrap hero-inner">
-      <span class="eyebrow">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg>
+  <!-- ===================== HERO ===================== -->
+  <section class="relative isolate overflow-hidden border-b border-white/5">
+    <div class="math-field" id="mathfield-hero" aria-hidden="true"></div>
+
+    <div class="relative z-10 mx-auto max-w-6xl px-4 pb-20 pt-14 sm:px-6 sm:pb-28 sm:pt-20 lg:px-8">
+      <p class="reveal font-mono text-xs font-semibold uppercase tracking-[0.2em] text-marker-teal">
         Coaching for Classes 6–12 · Bikaner
-      </span>
-      <h1>From first chalk mark to final exam <span class="underline">mark<svg viewBox="0 0 200 12" preserveAspectRatio="none" aria-hidden="true"><path d="M2 8 Q 50 2, 100 7 T 198 5" stroke="#E8C468" stroke-width="4" fill="none" stroke-linecap="round"/></svg></span>.</h1>
-      <p class="hero-sub">Access Career Institute teaches Classes 6–12 on a real blackboard, not a slide deck — small batches opposite Sitaram Gate, with every diagram drawn out until the student can draw it back.</p>
-      <div class="hero-ctas">
-        <a class="btn btn-solid" href="tel:+919772774800">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      </p>
+
+      <h1 class="reveal mt-5 max-w-3xl font-display text-4xl font-bold leading-[1.1] tracking-tight text-chalk sm:text-5xl lg:text-6xl">
+        From first
+        <span class="chalk-underline text-marker-yellow">
+          chalk mark
+          <svg viewBox="0 0 200 12" preserveAspectRatio="none" fill="none"><path d="M2 8 Q 50 2, 100 7 T 198 6" stroke="#FF6B5B" stroke-width="4" stroke-linecap="round"/></svg>
+        </span>
+        to final exam mark.
+      </h1>
+
+      <p class="reveal mt-6 max-w-xl text-base leading-relaxed text-chalkdim sm:text-lg">
+        Access Career Institute teaches Classes 6–12 on a real blackboard, not a slide deck — small batches opposite Sitaram Gate, with every diagram drawn out until the student can draw it back.
+      </p>
+
+      <div class="reveal mt-8 flex flex-wrap items-center gap-4">
+        <a href="tel:+919772774800" class="inline-flex items-center gap-2 rounded-full bg-marker-coral px-6 py-3 text-sm font-semibold text-ink shadow-lg shadow-marker-coral/20 transition hover:brightness-105">
           Call Now
         </a>
-        <a class="btn btn-chalk" href="https://maps.app.goo.gl/5YVtbRTbPe9Ea2pL6" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <a href="https://maps.app.goo.gl/5YVtbRTbPe9Ea2pL6" class="inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-chalk transition hover:border-marker-teal hover:text-marker-teal">
           Get Directions
         </a>
       </div>
-      <div class="hero-facts">
-        <div class="hero-fact"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.26L21 9.27l-4.5 4.38L17.8 21 12 17.77 6.2 21l1.3-7.35L3 9.27l6.1-1.01L12 2z"/></svg><span><strong>4.8★</strong> on Google, 17 reviews</span></div>
-        <div class="hero-fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span><strong>Mon–Sat</strong> 4–8 PM, Sun 8:30–1</span></div>
-        <div class="hero-fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span><strong>Wings Intl. School</strong> campus, opp. Sitaram Gate</span></div>
-      </div>
+
+      <dl class="reveal mt-12 grid max-w-2xl grid-cols-1 gap-6 border-t border-white/10 pt-8 sm:grid-cols-3">
+        <div>
+          <dt class="text-xs uppercase tracking-wide text-chalkdim">Rated by families</dt>
+          <dd class="mt-1 font-mono text-2xl font-bold text-marker-yellow">
+            <span data-countup="4.8" data-decimals="1">0.0</span>★
+            <span class="ml-1 text-sm font-normal text-chalkdim">/ 17 reviews</span>
+          </dd>
+        </div>
+        <div>
+          <dt class="text-xs uppercase tracking-wide text-chalkdim">Class hours</dt>
+          <dd class="mt-1 font-mono text-lg font-semibold text-chalk">Mon–Sat 4–8 PM<br/>Sun 8:30–1</dd>
+        </div>
+        <div>
+          <dt class="text-xs uppercase tracking-wide text-chalkdim">Find us at</dt>
+          <dd class="mt-1 text-sm text-chalk">Wings Intl. School campus,<br/>opp. Sitaram Gate</dd>
+        </div>
+      </dl>
+
+      <p class="reveal mt-10 font-mono text-sm text-chalkdim/70" aria-hidden="true">
+        ∠ABC&nbsp;=&nbsp;90°&nbsp;&nbsp;&nbsp;a²&nbsp;+&nbsp;b²&nbsp;=&nbsp;c²
+      </p>
     </div>
-
-    <span class="chalk-scrawl scrawl-1">∠ABC = 90°</span>
-    <span class="chalk-scrawl scrawl-2">a² + b² = c²</span>
-
-    <div class="chalk-dust-field" aria-hidden="true">
-      <span class="chalk-dust" style="left:8%; top:78%; width:3px; height:3px; animation-duration:8s; animation-delay:0s;"></span>
-      <span class="chalk-dust" style="left:22%; top:85%; width:2px; height:2px; animation-duration:11s; animation-delay:1.5s;"></span>
-      <span class="chalk-dust" style="left:38%; top:70%; width:3px; height:3px; animation-duration:9.5s; animation-delay:3s;"></span>
-      <span class="chalk-dust" style="left:55%; top:88%; width:2px; height:2px; animation-duration:10s; animation-delay:0.8s;"></span>
-      <span class="chalk-dust" style="left:70%; top:76%; width:3px; height:3px; animation-duration:12s; animation-delay:4s;"></span>
-      <span class="chalk-dust" style="left:88%; top:82%; width:2px; height:2px; animation-duration:9s; animation-delay:2.2s;"></span>
-    </div>
-
-    <svg class="chalk-diagram" id="chalkDiagram" viewBox="0 0 300 300" aria-hidden="true">
-      <circle cx="150" cy="140" r="78"/>
-      <circle class="dot" cx="150" cy="140" r="3"/>
-      <line x1="150" y1="140" x2="150" y2="62"/>
-      <line class="accent" x1="150" y1="140" x2="205" y2="185"/>
-      <path d="M150 100 A40 40 0 0 1 178 122" class="accent"/>
-      <path d="M40 250 L110 250 L110 220" />
-      <line x1="50" y1="250" x2="50" y2="240"/>
-      <line x1="65" y1="250" x2="65" y2="240"/>
-      <line x1="80" y1="250" x2="80" y2="240"/>
-      <line x1="95" y1="250" x2="95" y2="240"/>
-      <path d="M220 240 L260 240 L240 205 Z"/>
-    </svg>
   </section>
 
-  <!-- ============ TODAY'S BOARD (why) ============ -->
-  <section id="why" data-tone="paper" aria-labelledby="why-heading">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="eyebrow">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="1"/><path d="M3 9h18"/></svg>
-          What parents ask us
-        </span>
-        <h2 id="why-heading">Four things every parent asks about — answered before you ask.</h2>
-      </div>
+  <!-- divider -->
+  <div class="relative border-b border-white/5 bg-board py-1" aria-hidden="true">
+    <span class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-ink font-mono text-marker-teal">+</span>
+  </div>
 
-      <div class="agenda-list">
-        <article class="agenda-item reveal">
-          <span class="agenda-num">1.</span>
-          <div>
-            <h3>Small batches</h3>
-            <p>Every hand that goes up gets answered the same day — batch sizes stay small on purpose.</p>
-          </div>
-        </article>
-        <article class="agenda-item reveal">
-          <span class="agenda-num">2.</span>
-          <div>
-            <h3>Doubt-clearing, always on</h3>
-            <p>Extra classes and doubt sessions run through the week — not just before an exam.</p>
-          </div>
-        </article>
-        <article class="agenda-item reveal">
-          <span class="agenda-num">3.</span>
-          <div>
-            <h3>Teachers who mentor</h3>
-            <p>Progress is tracked student by student, across the whole year, not just at test time.</p>
-          </div>
-        </article>
-        <article class="agenda-item reveal">
-          <span class="agenda-num">4.</span>
-          <div>
-            <h3>Board + foundation</h3>
-            <p>Lessons match your school board's syllabus, with early groundwork for competitive exams too.</p>
-          </div>
-        </article>
+  <!-- ===================== WHY US ===================== -->
+  <section id="why" aria-labelledby="why-heading" class="bg-board py-20 sm:py-28">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <p class="reveal font-mono text-xs font-semibold uppercase tracking-[0.2em] text-marker-teal">What parents ask us</p>
+      <h2 id="why-heading" class="reveal mt-4 max-w-2xl font-display text-3xl font-bold leading-tight text-chalk sm:text-4xl">
+        Four things every parent asks about — answered before you ask.
+      </h2>
+
+      <div class="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="reveal rounded-2xl border border-white/10 bg-ink/60 p-6">
+          <span class="font-mono text-2xl font-bold text-marker-coral">%</span>
+          <h3 class="mt-4 font-display text-lg font-semibold text-chalk">Small batches</h3>
+          <p class="mt-2 text-sm leading-relaxed text-chalkdim">Every hand that goes up gets answered the same day — batch sizes stay small on purpose.</p>
+        </div>
+        <div class="reveal rounded-2xl border border-white/10 bg-ink/60 p-6">
+          <span class="font-mono text-2xl font-bold text-marker-yellow">÷</span>
+          <h3 class="mt-4 font-display text-lg font-semibold text-chalk">Doubt-clearing, always on</h3>
+          <p class="mt-2 text-sm leading-relaxed text-chalkdim">Extra classes and doubt sessions run through the week — not just before an exam.</p>
+        </div>
+        <div class="reveal rounded-2xl border border-white/10 bg-ink/60 p-6">
+          <span class="font-mono text-2xl font-bold text-marker-teal">×</span>
+          <h3 class="mt-4 font-display text-lg font-semibold text-chalk">Teachers who mentor</h3>
+          <p class="mt-2 text-sm leading-relaxed text-chalkdim">Progress is tracked student by student, across the whole year, not just at test time.</p>
+        </div>
+        <div class="reveal rounded-2xl border border-white/10 bg-ink/60 p-6">
+          <span class="font-mono text-2xl font-bold text-marker-coral">=</span>
+          <h3 class="mt-4 font-display text-lg font-semibold text-chalk">Board + foundation</h3>
+          <p class="mt-2 text-sm leading-relaxed text-chalkdim">Lessons match your school board's syllabus, with early groundwork for competitive exams too.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ TIMETABLE (programs) ============ -->
-  <section id="programs" data-tone="board-deep" aria-labelledby="programs-heading">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="eyebrow">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-          Our programs
-        </span>
-        <h2 id="programs-heading">A clear path from Class 6 to board results and beyond.</h2>
-      </div>
+  <div class="relative border-b border-white/5 bg-ink py-1" aria-hidden="true">
+    <span class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-board font-mono text-marker-yellow">×</span>
+  </div>
 
-      <div class="timetable-wrap reveal">
-        <table class="timetable">
+  <!-- ===================== PROGRAMS ===================== -->
+  <section id="programs" aria-labelledby="programs-heading" class="py-20 sm:py-28">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <p class="reveal font-mono text-xs font-semibold uppercase tracking-[0.2em] text-marker-teal">Our programs</p>
+      <h2 id="programs-heading" class="reveal mt-4 max-w-2xl font-display text-3xl font-bold leading-tight text-chalk sm:text-4xl">
+        A clear path from Class 6 to board results and beyond.
+      </h2>
+
+      <div class="reveal mt-12 overflow-x-auto rounded-2xl border border-white/10">
+        <table class="w-full min-w-[640px] border-collapse text-left text-sm">
+          <caption class="sr-only">Comparison of the Foundation, Board Prep, and Senior Secondary programs</caption>
           <thead>
-            <tr>
-              <th scope="col"></th>
-              <th scope="col">Foundation</th>
-              <th scope="col">Board Prep</th>
-              <th scope="col">Sr. Secondary + Foundation</th>
+            <tr class="bg-boardsoft text-chalk">
+              <th scope="col" class="px-5 py-4 font-display font-semibold"></th>
+              <th scope="col" class="px-5 py-4 font-display font-semibold">Foundation</th>
+              <th scope="col" class="px-5 py-4 font-display font-semibold">Board Prep</th>
+              <th scope="col" class="px-5 py-4 font-display font-semibold">Sr. Secondary + Foundation</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody class="divide-y divide-white/5">
             <tr>
-              <th scope="row">Std.</th>
-              <td>6 – 8</td>
-              <td>9 – 10</td>
-              <td>11 – 12</td>
+              <th scope="row" class="bg-board px-5 py-4 font-mono text-xs uppercase tracking-wide text-chalkdim">Std.</th>
+              <td class="px-5 py-4 font-mono text-marker-yellow">6 – 8</td>
+              <td class="px-5 py-4 font-mono text-marker-yellow">9 – 10</td>
+              <td class="px-5 py-4 font-mono text-marker-yellow">11 – 12</td>
             </tr>
             <tr>
-              <th scope="row">Focus</th>
-              <td>Building strong fundamentals</td>
-              <td>Board exam mastery</td>
-              <td>Board coursework + entrance groundwork</td>
+              <th scope="row" class="bg-board px-5 py-4 font-mono text-xs uppercase tracking-wide text-chalkdim">Focus</th>
+              <td class="px-5 py-4 text-chalkdim">Building strong fundamentals</td>
+              <td class="px-5 py-4 text-chalkdim">Board exam mastery</td>
+              <td class="px-5 py-4 text-chalkdim">Board coursework + entrance groundwork</td>
             </tr>
             <tr>
-              <th scope="row">Core</th>
-              <td>Maths · Science · English</td>
-              <td>Full board subject set</td>
-              <td>Physics · Chem · Maths/Bio + boards</td>
+              <th scope="row" class="bg-board px-5 py-4 font-mono text-xs uppercase tracking-wide text-chalkdim">Core</th>
+              <td class="px-5 py-4 text-chalkdim">Maths · Science · English</td>
+              <td class="px-5 py-4 text-chalkdim">Full board subject set</td>
+              <td class="px-5 py-4 text-chalkdim">Physics · Chem · Maths/Bio + boards</td>
             </tr>
             <tr>
-              <th scope="row">Habit</th>
-              <td>Weekly parent update</td>
-              <td>Timed practice papers</td>
-              <td>Concept-first mentoring</td>
+              <th scope="row" class="bg-board px-5 py-4 font-mono text-xs uppercase tracking-wide text-chalkdim">Habit</th>
+              <td class="px-5 py-4 text-chalkdim">Weekly parent update</td>
+              <td class="px-5 py-4 text-chalkdim">Timed practice papers</td>
+              <td class="px-5 py-4 text-chalkdim">Concept-first mentoring</td>
             </tr>
             <tr>
-              <th scope="row">Doubts</th>
-              <td>Included</td>
-              <td>Included</td>
-              <td>Included</td>
+              <th scope="row" class="bg-board px-5 py-4 font-mono text-xs uppercase tracking-wide text-chalkdim">Doubts</th>
+              <td class="px-5 py-4 text-marker-teal">Included</td>
+              <td class="px-5 py-4 text-marker-teal">Included</td>
+              <td class="px-5 py-4 text-marker-teal">Included</td>
             </tr>
           </tbody>
         </table>
       </div>
-      <p class="program-note reveal">Exact batch timings and fees are shared during a short phone or in-person consultation — call or WhatsApp to book one.</p>
+
+      <p class="reveal mt-6 max-w-2xl text-sm text-chalkdim">
+        Exact batch timings and fees are shared during a short phone or in-person consultation —
+        <a href="tel:+919772774800" class="font-medium text-marker-teal underline underline-offset-4">call</a>
+        or
+        <a href="https://wa.me/919772774800?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20admissions%20at%20Access%20Career%20Institute." class="font-medium text-marker-teal underline underline-offset-4">WhatsApp</a>
+        to book one.
+      </p>
     </div>
   </section>
 
-  <!-- ============ CHALK TALK (results) ============ -->
-  <section id="results" data-tone="board" aria-labelledby="results-heading">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="eyebrow">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2l2.9 6.26L21 9.27l-4.5 4.38L17.8 21 12 17.77 6.2 21l1.3-7.35L3 9.27l6.1-1.01L12 2z"/></svg>
-          What families say
+  <div class="relative border-b border-white/5 bg-board py-1" aria-hidden="true">
+    <span class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-ink font-mono text-marker-coral">%</span>
+  </div>
+
+  <!-- ===================== REVIEWS ===================== -->
+  <section id="results" aria-labelledby="results-heading" class="bg-board py-20 sm:py-28">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <p class="reveal font-mono text-xs font-semibold uppercase tracking-[0.2em] text-marker-teal">What families say</p>
+      <h2 id="results-heading" class="reveal mt-4 max-w-2xl font-display text-3xl font-bold leading-tight text-chalk sm:text-4xl">
+        Rated 4.8 out of 5 by Bikaner families.
+      </h2>
+
+      <div class="reveal mt-10 flex flex-wrap items-end gap-4">
+        <span class="font-mono text-5xl font-bold text-marker-yellow">
+          <span data-countup="4.8" data-decimals="1">0.0</span>
         </span>
-        <h2 id="results-heading">Rated 4.8 out of 5 by Bikaner families.</h2>
+        <p class="pb-2 text-sm text-chalkdim">
+          Based on <span class="font-mono text-chalk"><span data-countup="17">0</span></span> Google reviews ·
+          <a href="https://maps.app.goo.gl/5YVtbRTbPe9Ea2pL6" class="font-medium text-marker-teal underline underline-offset-4">Read reviews on Google Maps →</a>
+        </p>
       </div>
 
-      <div class="results-layout">
-        <div class="rating-slate reveal">
-          <div class="rating-number">
-            <span class="circle-wrap">
-              <span class="value" id="ratingValue" data-target="4.8">4.8</span>
-              <svg class="ring" viewBox="0 0 100 100" aria-hidden="true"><ellipse cx="50" cy="50" rx="46" ry="42" transform="rotate(-4 50 50)"/></svg>
-            </span>
+      <div class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
+        <figure class="reveal rounded-2xl border border-white/10 bg-ink/60 p-6">
+          <span class="font-mono text-3xl text-marker-teal/60" aria-hidden="true">[</span>
+          <blockquote class="mt-2 text-base leading-relaxed text-chalk">Teachers remember names, not just roll numbers.</blockquote>
+          <figcaption class="mt-4 text-xs uppercase tracking-wide text-chalkdim">A recurring theme in Google reviews</figcaption>
+        </figure>
+        <figure class="reveal rounded-2xl border border-white/10 bg-ink/60 p-6">
+          <span class="font-mono text-3xl text-marker-teal/60" aria-hidden="true">[</span>
+          <blockquote class="mt-2 text-base leading-relaxed text-chalk">Doubt-clearing classes run through the week, exam season or not.</blockquote>
+          <figcaption class="mt-4 text-xs uppercase tracking-wide text-chalkdim">A recurring theme in Google reviews</figcaption>
+        </figure>
+        <figure class="reveal rounded-2xl border border-white/10 bg-ink/60 p-6">
+          <span class="font-mono text-3xl text-marker-teal/60" aria-hidden="true">[</span>
+          <blockquote class="mt-2 text-base leading-relaxed text-chalk">Festivals get celebrated together — it doesn't feel like just a coaching class.</blockquote>
+          <figcaption class="mt-4 text-xs uppercase tracking-wide text-chalkdim">A recurring theme in Google reviews</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <div class="relative border-b border-white/5 bg-ink py-1" aria-hidden="true">
+    <span class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-board font-mono text-marker-teal">÷</span>
+  </div>
+
+  <!-- ===================== LOCATION ===================== -->
+  <section id="location" aria-labelledby="location-heading" class="py-20 sm:py-28">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <p class="reveal font-mono text-xs font-semibold uppercase tracking-[0.2em] text-marker-teal">Visit us</p>
+      <h2 id="location-heading" class="reveal mt-4 max-w-2xl font-display text-3xl font-bold leading-tight text-chalk sm:text-4xl">
+        Opposite Sitaram Gate, inside Wings International School campus.
+      </h2>
+
+      <div class="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-2">
+        <div class="reveal rounded-2xl border border-white/10 bg-board p-7">
+          <h3 class="font-display text-sm font-semibold uppercase tracking-wide text-marker-teal">Find us here</h3>
+          <address class="mt-3 not-italic leading-relaxed text-chalk">
+            Access Career Institute<br/>
+            Wings International School Campus<br/>
+            Opposite Sitaram Gate, Jawahar Nagar<br/>
+            Bikaner, Rajasthan 334001
+          </address>
+
+          <dl class="mt-6 space-y-2 border-t border-white/10 pt-6 font-mono text-sm">
+            <div class="flex justify-between"><dt class="text-chalkdim">Monday – Saturday</dt><dd class="text-chalk">4:00 PM – 8:00 PM</dd></div>
+            <div class="flex justify-between"><dt class="text-chalkdim">Sunday</dt><dd class="text-chalk">8:30 AM – 1:00 PM</dd></div>
+          </dl>
+
+          <div class="mt-7 flex flex-wrap gap-3">
+            <a href="https://maps.app.goo.gl/5YVtbRTbPe9Ea2pL6" class="inline-flex items-center gap-2 rounded-full bg-marker-coral px-5 py-2.5 text-sm font-semibold text-ink transition hover:brightness-105">Get Directions</a>
+            <a href="https://wa.me/919772774800?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20admissions%20at%20Access%20Career%20Institute." class="inline-flex items-center gap-2 rounded-full border border-white/15 px-5 py-2.5 text-sm font-semibold text-chalk transition hover:border-marker-teal hover:text-marker-teal">WhatsApp</a>
           </div>
-          <div class="stars-row" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26L21 9.27l-4.5 4.38L17.8 21 12 17.77 6.2 21l1.3-7.35L3 9.27l6.1-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26L21 9.27l-4.5 4.38L17.8 21 12 17.77 6.2 21l1.3-7.35L3 9.27l6.1-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26L21 9.27l-4.5 4.38L17.8 21 12 17.77 6.2 21l1.3-7.35L3 9.27l6.1-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26L21 9.27l-4.5 4.38L17.8 21 12 17.77 6.2 21l1.3-7.35L3 9.27l6.1-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor" opacity="0.55"><path d="M12 2l2.9 6.26L21 9.27l-4.5 4.38L17.8 21 12 17.77 6.2 21l1.3-7.35L3 9.27l6.1-1.01L12 2z"/></svg>
-          </div>
-          <p class="rating-count">Based on 17 Google reviews</p>
-          <a class="rating-link" href="https://maps.app.goo.gl/5YVtbRTbPe9Ea2pL6" target="_blank" rel="noopener">Read reviews on Google Maps →</a>
         </div>
 
-        <div class="slate-list">
-          <div class="slate-card reveal">
-            <p>"Teachers remember names, not just roll numbers."</p>
-            <p class="slate-caption">A recurring theme in Google reviews</p>
-          </div>
-          <div class="slate-card reveal">
-            <p>"Doubt-clearing classes run through the week, exam season or not."</p>
-            <p class="slate-caption">A recurring theme in Google reviews</p>
-          </div>
-          <div class="slate-card reveal">
-            <p>"Festivals get celebrated together — it doesn't feel like just a coaching class."</p>
-            <p class="slate-caption">A recurring theme in Google reviews</p>
-          </div>
+        <div class="reveal overflow-hidden rounded-2xl border border-white/10">
+          <a href="https://maps.app.goo.gl/5YVtbRTbPe9Ea2pL6" class="block border-b border-white/10 bg-board px-5 py-3 text-sm font-medium text-marker-teal hover:underline">Open in Maps ↗</a>
+          <iframe
+            title="Map showing Access Career Institute, Wings International School Campus, Opposite Sitaram Gate, Bikaner"
+            src="https://www.google.com/maps?q=28.0202669,73.2952875&z=16&output=embed"
+            class="h-72 w-full lg:h-full"
+            style="border:0"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ NOTICEBOARD (location) ============ -->
-  <section id="location" data-tone="cork" aria-labelledby="location-heading">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="eyebrow">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          Visit us
-        </span>
-        <h2 id="location-heading">Opposite Sitaram Gate, inside Wings International School campus.</h2>
-      </div>
+  <!-- ===================== FINAL CTA ===================== -->
+  <section id="contact" aria-labelledby="contact-heading" class="relative isolate overflow-hidden border-y border-white/5 bg-board">
+    <div class="math-field" id="mathfield-cta" aria-hidden="true"></div>
 
-      <div class="noticeboard">
-        <div class="notice-grid">
-          <div class="pinned-note reveal">
-            <span class="note-label">Find us here</span>
-            <address>
-              Access Career Institute<br>
-              Wings International School Campus<br>
-              Opposite Sitaram Gate, Jawahar Nagar<br>
-              Bikaner, Rajasthan 334001
-            </address>
-            <div class="hours-table">
-              <div class="hours-row"><span>Monday – Saturday</span><span>4:00 PM – 8:00 PM</span></div>
-              <div class="hours-row"><span>Sunday</span><span>8:30 AM – 1:00 PM</span></div>
-            </div>
-            <div class="notice-ctas">
-              <a class="btn btn-ink" href="https://maps.app.goo.gl/5YVtbRTbPe9Ea2pL6" target="_blank" rel="noopener">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                Get Directions
-              </a>
-              <a class="btn btn-ink" href="https://wa.me/919772774800?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20admissions%20at%20Access%20Career%20Institute." target="_blank" rel="noopener">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5H3l2-4A8.5 8.5 0 1 1 21 11.5z"/></svg>
-                WhatsApp
-              </a>
-            </div>
-          </div>
+    <div class="relative z-10 mx-auto max-w-3xl px-4 py-20 text-center sm:px-6 sm:py-28 lg:px-8">
+      <h2 id="contact-heading" class="reveal font-display text-3xl font-bold leading-tight text-chalk sm:text-4xl">
+        Ready to enroll? Call before your child's batch fills up.
+      </h2>
+      <p class="reveal mt-5 text-base leading-relaxed text-chalkdim">
+        Call or message to check seat availability for your child's class. Most queries get a same-day response.
+      </p>
 
-          <div class="map-frame-wrap reveal">
-            <a class="map-open-badge" href="https://maps.app.goo.gl/5YVtbRTbPe9Ea2pL6" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg>
-              Open in Maps
-            </a>
-            <div class="map-pin-frame">
-              <div class="map-fallback" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                <p>Wings International School Campus, Opposite Sitaram Gate, Bikaner</p>
-              </div>
-              <iframe
-                src="https://www.google.com/maps?q=28.0202669,73.2952875&z=16&output=embed"
-                title="Map showing Access Career Institute location in Bikaner"
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade">
-              </iframe>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+      <p class="reveal mt-8 font-mono text-2xl font-bold text-marker-yellow">+91 97727 74800</p>
 
-  <!-- ============ CONTACT BANNER ============ -->
-  <section id="contact" aria-labelledby="contact-heading">
-    <div class="wrap">
-      <div class="bell-banner reveal">
-        <svg class="bell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
-        <h2 id="contact-heading">Ready to enroll? Call before your child's batch fills up.</h2>
-        <p>Call or message to check seat availability for your child's class. Most queries get a same-day response.</p>
-        <a class="bell-phone" href="tel:+919772774800">+91 97727 74800</a>
-        <div class="btn-row">
-          <a class="btn btn-solid" href="tel:+919772774800">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            Call Now
-          </a>
-          <a class="btn btn-chalk" href="https://wa.me/919772774800?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20admissions%20at%20Access%20Career%20Institute." target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5H3l2-4A8.5 8.5 0 1 1 21 11.5z"/></svg>
-            WhatsApp
-          </a>
-          <button class="btn btn-chalk copy-btn" data-phone="+919772774800" type="button">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-            Copy Number
-          </button>
-        </div>
+      <div class="reveal mt-8 flex flex-wrap items-center justify-center gap-4">
+        <a href="tel:+919772774800" class="inline-flex items-center gap-2 rounded-full bg-marker-coral px-7 py-3 text-sm font-semibold text-ink shadow-lg shadow-marker-coral/20 transition hover:brightness-105">Call Now</a>
+        <a href="https://wa.me/919772774800?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20admissions%20at%20Access%20Career%20Institute." class="inline-flex items-center gap-2 rounded-full border border-white/15 px-7 py-3 text-sm font-semibold text-chalk transition hover:border-marker-teal hover:text-marker-teal">WhatsApp</a>
+        <button type="button" data-copy="+91 97727 74800" class="inline-flex items-center gap-2 rounded-full border border-white/15 px-7 py-3 text-sm font-semibold text-chalkdim transition hover:border-marker-teal hover:text-marker-teal">Copy Number</button>
       </div>
     </div>
   </section>
 
 </main>
 
-<footer>
-  <div class="wrap">
-    <div class="footer-grid">
+<!-- ===================== FOOTER ===================== -->
+<footer class="bg-ink">
+  <div class="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 gap-10 sm:grid-cols-3">
       <div>
-        <div class="footer-brand">
-          <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="31" fill="#24382C" stroke="#E8C468" stroke-width="1.5"/><circle cx="32" cy="32" r="15" fill="none" stroke="#F5F3EC" stroke-width="2"/><circle cx="32" cy="32" r="2.5" fill="#E8C468"/></svg>
-          <strong>Access Career Institute</strong>
-        </div>
-        <p>Small-batch coaching for Classes 6–12 in Bikaner — taught on a real blackboard, with mentorship that knows every student by name.</p>
+        <h3 class="font-display text-lg font-bold text-chalk">Access Career Institute</h3>
+        <p class="mt-3 text-sm leading-relaxed text-chalkdim">
+          Small-batch coaching for Classes 6–12 in Bikaner — taught on a real blackboard, with mentorship that knows every student by name.
+        </p>
       </div>
       <div>
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="#why">Why Us</a></li>
-          <li><a href="#programs">Programs</a></li>
-          <li><a href="#results">Reviews</a></li>
-          <li><a href="#location">Location</a></li>
+        <h4 class="font-mono text-xs font-semibold uppercase tracking-wide text-marker-teal">Quick Links</h4>
+        <ul class="mt-4 space-y-2 text-sm">
+          <li><a href="#why" class="text-chalkdim hover:text-chalk">Why Us</a></li>
+          <li><a href="#programs" class="text-chalkdim hover:text-chalk">Programs</a></li>
+          <li><a href="#results" class="text-chalkdim hover:text-chalk">Reviews</a></li>
+          <li><a href="#location" class="text-chalkdim hover:text-chalk">Location</a></li>
         </ul>
       </div>
       <div>
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="tel:+919772774800">+91 97727 74800</a></li>
-          <li><a href="https://wa.me/919772774800" target="_blank" rel="noopener">WhatsApp</a></li>
-          <li><a href="https://maps.app.goo.gl/5YVtbRTbPe9Ea2pL6" target="_blank" rel="noopener">Opposite Sitaram Gate, Bikaner</a></li>
+        <h4 class="font-mono text-xs font-semibold uppercase tracking-wide text-marker-teal">Contact</h4>
+        <ul class="mt-4 space-y-2 text-sm">
+          <li><a href="tel:+919772774800" class="text-chalkdim hover:text-chalk">+91 97727 74800</a></li>
+          <li><a href="https://wa.me/919772774800?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20admissions%20at%20Access%20Career%20Institute." class="text-chalkdim hover:text-chalk">WhatsApp</a></li>
+          <li><a href="https://maps.app.goo.gl/5YVtbRTbPe9Ea2pL6" class="text-chalkdim hover:text-chalk">Opposite Sitaram Gate, Bikaner</a></li>
         </ul>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span>© <span id="year">2026</span> Access Career Institute, Bikaner.</span>
-      <span>Mon–Sat 4–8 PM · Sun 8:30 AM–1 PM</span>
-    </div>
+    <p class="mt-12 border-t border-white/10 pt-6 text-xs text-chalkdim/70">
+      © 2026 Access Career Institute, Bikaner. Mon–Sat 4–8 PM · Sun 8:30 AM–1 PM
+    </p>
   </div>
 </footer>
 
-<nav class="mobile-action-bar" aria-label="Quick contact">
-  <a class="is-primary" href="tel:+919772774800">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-    Call
+<!-- ===================== MOBILE STICKY BAR ===================== -->
+<nav aria-label="Quick actions" class="fixed inset-x-0 bottom-0 z-40 grid grid-cols-3 border-t border-white/10 bg-board/95 backdrop-blur md:hidden">
+  <a href="tel:+919772774800" class="flex flex-col items-center gap-1 py-3 text-xs font-medium text-chalk">
+    <span class="font-mono text-base text-marker-coral">+</span>Call
   </a>
-  <a href="https://wa.me/919772774800?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20admissions%20at%20Access%20Career%20Institute." target="_blank" rel="noopener">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5H3l2-4A8.5 8.5 0 1 1 21 11.5z"/></svg>
-    WhatsApp
+  <a href="https://wa.me/919772774800?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20admissions%20at%20Access%20Career%20Institute." class="flex flex-col items-center gap-1 border-x border-white/10 py-3 text-xs font-medium text-chalk">
+    <span class="font-mono text-base text-marker-teal">%</span>WhatsApp
   </a>
-  <a href="https://maps.app.goo.gl/5YVtbRTbPe9Ea2pL6" target="_blank" rel="noopener">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-    Directions
+  <a href="https://maps.app.goo.gl/5YVtbRTbPe9Ea2pL6" class="flex flex-col items-center gap-1 py-3 text-xs font-medium text-chalk">
+    <span class="font-mono text-base text-marker-yellow">=</span>Directions
   </a>
 </nav>
 
-<div class="toast" id="toast" role="status" aria-live="polite">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg>
-  <span id="toastMsg">Copied!</span>
+<!-- Copy toast -->
+<div id="toast" role="status" aria-live="polite" class="pointer-events-none fixed bottom-20 left-1/2 z-50 -translate-x-1/2 rounded-full bg-marker-yellow px-4 py-2 text-sm font-semibold text-ink opacity-0 transition-opacity duration-300 md:bottom-8">
+  Copied!
 </div>
 
 <script>
-  var navToggle = document.getElementById('navToggle');
-  var mobileNav = document.getElementById('mobileNav');
-  navToggle.addEventListener('click', function(){
-    var isOpen = mobileNav.classList.toggle('is-open');
-    navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-    navToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+  // ---------- Mobile menu toggle ----------
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('menu-icon-open');
+  const iconClose = document.getElementById('menu-icon-close');
+  menuBtn.addEventListener('click', () => {
+    const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+    menuBtn.setAttribute('aria-expanded', String(!expanded));
+    mobileMenu.classList.toggle('hidden');
+    iconOpen.classList.toggle('hidden');
+    iconClose.classList.toggle('hidden');
   });
-  mobileNav.querySelectorAll('a').forEach(function(link){
-    link.addEventListener('click', function(){
-      mobileNav.classList.remove('is-open');
-      navToggle.setAttribute('aria-expanded', 'false');
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      iconOpen.classList.remove('hidden');
+      iconClose.classList.add('hidden');
     });
   });
 
-  // Reduced-motion preference, checked once and reused below
-  var prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  // Scroll progress bar + header depth-on-scroll
-  var scrollProgress = document.getElementById('scrollProgress');
-  var siteHeader = document.querySelector('.site-header');
-  function onScrollUpdate(){
-    var doc = document.documentElement;
-    var scrollTop = window.scrollY || doc.scrollTop;
-    var max = (doc.scrollHeight - doc.clientHeight) || 1;
-    var pct = Math.min(100, Math.max(0, (scrollTop / max) * 100));
-    if (scrollProgress) scrollProgress.style.width = pct + '%';
-    if (siteHeader) siteHeader.classList.toggle('is-scrolled', scrollTop > 8);
-  }
-  window.addEventListener('scroll', onScrollUpdate, { passive: true });
-  window.addEventListener('resize', onScrollUpdate);
-  onScrollUpdate();
-
-  // Animated count-up for the 4.8 rating, once it scrolls into view
-  var ratingValue = document.getElementById('ratingValue');
-  if (ratingValue){
-    var ratingTarget = parseFloat(ratingValue.getAttribute('data-target')) || 0;
-    var ratingSlate = document.querySelector('.rating-slate');
-    function animateRating(){
-      if (prefersReducedMotion || !('requestAnimationFrame' in window)){
-        ratingValue.textContent = ratingTarget.toFixed(1);
-        return;
-      }
-      ratingValue.textContent = '0.0';
-      var duration = 1100;
-      var start = null;
-      function step(ts){
-        if (start === null) start = ts;
-        var progress = Math.min((ts - start) / duration, 1);
-        var eased = 1 - Math.pow(1 - progress, 3);
-        ratingValue.textContent = (ratingTarget * eased).toFixed(1);
-        if (progress < 1) requestAnimationFrame(step);
-        else ratingValue.textContent = ratingTarget.toFixed(1);
-      }
-      requestAnimationFrame(step);
+  // ---------- Copy number ----------
+  const toast = document.getElementById('toast');
+  let toastTimer;
+  document.addEventListener('click', async (e) => {
+    const btn = e.target.closest('[data-copy]');
+    if (!btn) return;
+    const value = btn.getAttribute('data-copy');
+    try {
+      await navigator.clipboard.writeText(value);
+    } catch (err) {
+      const ta = document.createElement('textarea');
+      ta.value = value;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
     }
-    if ('IntersectionObserver' in window && ratingSlate){
-      var ratingIO = new IntersectionObserver(function(entries){
-        entries.forEach(function(entry){
-          if (entry.isIntersecting){
-            animateRating();
-            ratingIO.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.5 });
-      ratingIO.observe(ratingSlate);
-    } else {
-      animateRating();
+    toast.style.opacity = '1';
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => { toast.style.opacity = '0'; }, 1800);
+  });
+
+  // ---------- Reduced motion check ----------
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ---------- Floating math-operator field ----------
+  const SYMBOLS = ['+', '\u2212', '\u00d7', '\u00f7', '=', '%', '\u03c0', '\u221a', '\u221e', '\u00b0'];
+  const COLORS = ['#F2C14E', '#FF6B5B', '#58D6C9'];
+
+  function spawnMathField(id, count) {
+    const container = document.getElementById(id);
+    if (!container) return;
+    for (let i = 0; i < count; i++) {
+      const span = document.createElement('span');
+      span.className = 'math-symbol';
+      span.setAttribute('aria-hidden', 'true');
+      span.textContent = SYMBOLS[Math.floor(Math.random() * SYMBOLS.length)];
+
+      const left = Math.random() * 96;
+      const size = 1 + Math.random() * 1.5;
+      const duration = 18 + Math.random() * 20;
+      const delay = -Math.random() * duration;
+      const drift = (Math.random() - 0.5) * 60;
+      const opacity = 0.12 + Math.random() * 0.14;
+      const color = COLORS[Math.floor(Math.random() * COLORS.length)];
+
+      span.style.left = left + '%';
+      span.style.fontSize = size + 'rem';
+      span.style.color = color;
+      span.style.setProperty('--drift', drift + 'px');
+      span.style.setProperty('--op', opacity);
+
+      if (prefersReducedMotion) {
+        span.style.bottom = (Math.random() * 90) + '%';
+        span.style.opacity = String(opacity);
+      } else {
+        span.style.animationDuration = duration + 's';
+        span.style.animationDelay = delay + 's';
+      }
+      container.appendChild(span);
     }
   }
+  spawnMathField('mathfield-hero', 16);
+  spawnMathField('mathfield-cta', 10);
 
-  var revealEls = document.querySelectorAll('.reveal, #chalkDiagram');
-  if ('IntersectionObserver' in window){
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(entry){
-        if (entry.isIntersecting){
+  // ---------- Scroll reveal ----------
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && !prefersReducedMotion) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
           entry.target.classList.add('is-visible');
           io.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.16 });
-    revealEls.forEach(function(el){ io.observe(el); });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(el => io.observe(el));
   } else {
-    revealEls.forEach(function(el){ el.classList.add('is-visible'); });
+    revealEls.forEach(el => el.classList.add('is-visible'));
   }
 
-  // Smooth-scroll for in-page nav links
-  var navLinks = document.querySelectorAll('.nav-link');
-  navLinks.forEach(function(link){
-    link.addEventListener('click', function(e){
-      var id = link.getAttribute('data-target');
-      var target = document.getElementById(id);
-      if (target){
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        history.pushState(null, '', '#' + id);
-      }
-    });
-  });
-
-  // Scroll-spy: highlight the nav link for the section in view
-  // FIX: reduced bottom margin from -60% to -40% so the last section (#contact),
-  // which is short, can still cross the visibility threshold and get highlighted.
-  var spySections = ['why','programs','results','location','contact']
-    .map(function(id){ return document.getElementById(id); })
-    .filter(Boolean);
-  if ('IntersectionObserver' in window && spySections.length){
-    var spy = new IntersectionObserver(function(entries){
-      entries.forEach(function(entry){
-        if (entry.isIntersecting){
-          var id = entry.target.id;
-          navLinks.forEach(function(link){
-            link.classList.toggle('active', link.getAttribute('data-target') === id);
-          });
+  // ---------- Count-up numbers ----------
+  function animateCount(el) {
+    const target = parseFloat(el.getAttribute('data-countup'));
+    const decimals = parseInt(el.getAttribute('data-decimals') || '0', 10);
+    const duration = 1200;
+    const start = performance.now();
+    function tick(now) {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = (target * eased).toFixed(decimals);
+      if (progress < 1) requestAnimationFrame(tick);
+      else el.textContent = target.toFixed(decimals);
+    }
+    requestAnimationFrame(tick);
+  }
+  const countEls = document.querySelectorAll('[data-countup]');
+  if ('IntersectionObserver' in window) {
+    const countIo = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          if (prefersReducedMotion) {
+            const target = parseFloat(entry.target.getAttribute('data-countup'));
+            const decimals = parseInt(entry.target.getAttribute('data-decimals') || '0', 10);
+            entry.target.textContent = target.toFixed(decimals);
+          } else {
+            animateCount(entry.target);
+          }
+          countIo.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.3, rootMargin: '-80px 0px -40% 0px' });
-    spySections.forEach(function(s){ spy.observe(s); });
+    }, { threshold: 0.4 });
+    countEls.forEach(el => countIo.observe(el));
   }
-
-  // Copy phone number to clipboard, with toast confirmation
-  var toast = document.getElementById('toast');
-  var toastMsg = document.getElementById('toastMsg');
-  var toastTimer;
-  function showToast(msg){
-    toastMsg.textContent = msg;
-    toast.classList.add('is-shown');
-    clearTimeout(toastTimer);
-    toastTimer = setTimeout(function(){ toast.classList.remove('is-shown'); }, 2200);
-  }
-  document.querySelectorAll('.copy-btn').forEach(function(btn){
-    btn.addEventListener('click', function(){
-      var phone = btn.getAttribute('data-phone') || '+919772774800';
-      if (navigator.clipboard && navigator.clipboard.writeText){
-        navigator.clipboard.writeText(phone)
-          .then(function(){ showToast('Number copied: ' + phone); })
-          .catch(function(){ showToast('Copy failed — dial ' + phone + ' manually'); });
-      } else {
-        var temp = document.createElement('textarea');
-        temp.value = phone;
-        temp.style.position = 'fixed';
-        temp.style.opacity = '0';
-        // FIX: keep the temporary clipboard-fallback textarea out of the tab order
-        // and hidden from assistive tech, so it doesn't disrupt keyboard/screen-reader flow.
-        temp.setAttribute('aria-hidden', 'true');
-        temp.tabIndex = -1;
-        document.body.appendChild(temp);
-        temp.select();
-        try { document.execCommand('copy'); showToast('Number copied: ' + phone); }
-        catch(err){ showToast('Copy failed — dial ' + phone + ' manually'); }
-        document.body.removeChild(temp);
-      }
-    });
-  });
-
-  document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 
 </body>
